@@ -19,7 +19,7 @@ const AddJobPage = () => {
   const addJob = async (newJob) => {
     try {
       console.log("Adding job:", newJob);
-      const res = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/jobs`);
+      const res = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/jobs`, {
         method: "POST",
         body: JSON.stringify(newJob),
         headers: {
