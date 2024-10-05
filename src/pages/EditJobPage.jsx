@@ -25,7 +25,7 @@ const EditJobPage = () => {
   const updateJob = async (job) => {
     try {
       console.log("Updating job:", job);
-      const res = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/jobs/${job.id}`, {
+      const res = await fetch(`/api/jobs/${job.id}`, {
         method: "PUT",
         body: JSON.stringify(job),
         headers: {
@@ -44,7 +44,7 @@ const EditJobPage = () => {
   useEffect(() => {
     const fetchJob = async () => {
       try {
-        const res = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/jobs/${id}`);
+        const res = await fetch(`/api/jobs/${id}`);
         if (!res.ok) {
           throw new Error("Network response was not ok");
         }
