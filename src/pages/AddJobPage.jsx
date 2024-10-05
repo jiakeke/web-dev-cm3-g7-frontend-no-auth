@@ -19,7 +19,7 @@ const AddJobPage = () => {
   const addJob = async (newJob) => {
     try {
       console.log("Adding job:", newJob);
-      const res = await fetch(`/api/jobs`, {
+      const res = await fetch(`${import.meta.env.VITE_API_PROXY_TARGET}/api/jobs`, {
         method: "POST",
         body: JSON.stringify(newJob),
         headers: {
